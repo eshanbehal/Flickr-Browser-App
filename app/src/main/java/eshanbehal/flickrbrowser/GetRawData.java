@@ -10,21 +10,31 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-enum DownloadStatus {IDLE , PROCESSING , NOT_INITIALISED , FAILED_OR_EMPTY , OK}
+enum DownloadStatus { IDLE, PROCESSING, NOT_INITIALISED, FAILED_OR_EMPTY, OK }
 
 
-class GetRawData extends AsyncTask<String , Void , String> {
+class GetRawData extends AsyncTask<String, Void, String> {
     private static final String TAG = "GetRawData";
 
     private DownloadStatus mDownloadStatus;
+    private final OnDownloadComplete mCallback;
 
-    public GetRawData() {
-        mDownloadStatus = DownloadStatus.IDLE;
+    interface OnDownloadComplete {
+        void onDownloadComplete(String data, DownloadStatus status);
+    }
+
+    public GetRawData(OnDownloadComplete callback) {
+        this.mDownloadStatus = DownloadStatus.IDLE;
+        mCallback = callback;
     }
 
     @Override
     protected void onPostExecute(String s) {
-        super.onPostExecute(s);
+        Log.d(TAG, "onPostExecute: parameter = " + s);
+        if(mCallback != null) {
+            mCallback.onDownloadComplete(s, mDownloadStatus);
+        }
+        Log.d(TAG, "onPostExecute: ends");
     }
 
     @Override
@@ -32,7 +42,7 @@ class GetRawData extends AsyncTask<String , Void , String> {
         HttpURLConnection connection = null;
         BufferedReader reader = null;
 
-        if (strings == null) {
+        if(strings == null) {
             mDownloadStatus = DownloadStatus.NOT_INITIALISED;
             return null;
         }
@@ -40,47 +50,72 @@ class GetRawData extends AsyncTask<String , Void , String> {
         try {
             mDownloadStatus = DownloadStatus.PROCESSING;
             URL url = new URL(strings[0]);
+
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
-            
             int response = connection.getResponseCode();
-            Log.d(TAG, "doInBackground: The Response Code Was : " + response);
+            Log.d(TAG, "doInBackground: The response code was " + response);
 
             StringBuilder result = new StringBuilder();
 
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-            String line;
-            while (null != ( line = reader.readLine())){
+//            String line;
+//            while(null != (line = reader.readLine())) {
+            for(String line = reader.readLine(); line != null; line = reader.readLine()) {
                 result.append(line).append("\n");
             }
+
             mDownloadStatus = DownloadStatus.OK;
             return result.toString();
 
 
-        }catch (MalformedURLException e){
-            Log.e(TAG, "doInBackground: Invalid Url " + e.getMessage() );
-        }
-        catch (IOException e){
-            Log.e(TAG, "doInBackground: IO Exception Reading Data " + e.getMessage() );
-        }
-        catch (SecurityException e){
-            Log.e(TAG, "doInBackground: Security Exception. Needs Permission? " + e.getMessage() );
-        }
-        finally {
-            if (connection != null){
+        } catch(MalformedURLException e) {
+            Log.e(TAG, "doInBackground: Invalid URL " + e.getMessage() );
+        } catch(IOException e) {
+            Log.e(TAG, "doInBackground: IO Exception reading data: " + e.getMessage() );
+        } catch(SecurityException e) {
+            Log.e(TAG, "doInBackground: Security Exception. Needs permission? " + e.getMessage());
+        } finally {
+            if(connection != null) {
                 connection.disconnect();
             }
-            if (reader != null){
+            if(reader != null) {
                 try {
                     reader.close();
-                }catch (IOException e){
-                    Log.e(TAG, "doInBackground: Erroe Closing Stream" + e.getMessage() );
+                } catch(IOException e) {
+                    Log.e(TAG, "doInBackground: Error closing stream " + e.getMessage() );
                 }
             }
         }
+
         mDownloadStatus = DownloadStatus.FAILED_OR_EMPTY;
         return null;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
