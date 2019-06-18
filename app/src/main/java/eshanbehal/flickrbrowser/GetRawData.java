@@ -47,10 +47,18 @@ class GetRawData extends AsyncTask<String , Void , String> {
             int response = connection.getResponseCode();
             Log.d(TAG, "doInBackground: The Response Code Was : " + response);
 
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder result = new StringBuilder();
 
             reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            
+
+            String line;
+            while (null != ( line = reader.readLine())){
+                result.append(line).append("\n");
+            }
+            mDownloadStatus = DownloadStatus.OK;
+            return result.toString();
+
+
         }catch (MalformedURLException e){
             Log.e(TAG, "doInBackground: Invalid Url " + e.getMessage() );
         }
@@ -60,6 +68,19 @@ class GetRawData extends AsyncTask<String , Void , String> {
         catch (SecurityException e){
             Log.e(TAG, "doInBackground: Security Exception. Needs Permission? " + e.getMessage() );
         }
+        finally {
+            if (connection != null){
+                connection.disconnect();
+            }
+            if (reader != null){
+                try {
+                    reader.close();
+                }catch (IOException e){
+                    Log.e(TAG, "doInBackground: Erroe Closing Stream" + e.getMessage() );
+                }
+            }
+        }
+        mDownloadStatus = DownloadStatus.FAILED_OR_EMPTY;
         return null;
     }
 }
