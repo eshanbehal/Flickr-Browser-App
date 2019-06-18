@@ -13,3 +13,6 @@
    for more info : https://www.flickr.com/
                    
                  : https://www.flickr.com/services/api/
+
+4. Added some Log codes for the app in order to view the process of debugging in the logcat.
+
