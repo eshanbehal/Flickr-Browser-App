@@ -3,6 +3,10 @@ package eshanbehal.flickrbrowser;
 import android.net.Uri;
 import android.util.Log;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 class GetFlickrJsonData implements GetRawData.OnDownloadComplete {
@@ -46,9 +50,31 @@ class GetFlickrJsonData implements GetRawData.OnDownloadComplete {
                 .appendQueryParameter("format" , "json")
                 .appendQueryParameter("nojsoncallback" , "1")
                 .build().toString();
-        
-
-
     }
 
+    @Override
+    public void onDownloadComplete(String data, DownloadStatus status) {
+        Log.d(TAG, "onDownloadComplete: starts. Status = " + status);
+
+        if (status == DownloadStatus.OK){
+            mPhotoList = new ArrayList<>();
+        }
+        try {
+            JSONObject jsonData = new JSONObject(data);
+            JSONArray itemsArray = jsonData.getJSONArray("Items");
+            for (int i = 0 ; i<itemsArray.length() ; i++){
+                JSONObject jsonPhoto = itemsArray.getJSONObject(i);
+                String title = jsonPhoto.getString("title");
+                String author = jsonPhoto.getString("author");
+                String authorId = jsonPhoto.getString("author_id");
+                String tags = jsonPhoto.getString("tags");
+
+                JSONObject jsonMedia = jsonPhoto.getJSONObject("media");
+                String PhotoUrl = jsonMedia.getString("m");
+
+                String link = PhotoUrl.replaceFirst("_m." , "_b.");
+
+            }
+        }
+    }
 }
