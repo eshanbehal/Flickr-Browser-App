@@ -25,3 +25,13 @@
 
 
 
+      19th june
+   ==============
+
+1. jst starting off today with writing the code for the calling of the getrawdata class
+   in the main activity class just by creating mcallback method and it will do all the work.
+
+
+
+
+
