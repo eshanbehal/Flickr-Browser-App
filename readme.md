@@ -31,6 +31,14 @@
 1. jst starting off today with writing the code for the calling of the getrawdata class
    in the main activity class just by creating mcallback method and it will do all the work.
 
+2. ended todays code by making new java classes for downloading the data from the async task
+   method and then creating other classes one for the photos for adding various fields to the
+   photo class like title , author , author_id.
+   \and the getflickrjson data class for parsing the data downloading in this this class and 
+    to be called later in the main activity class...
+
+
+
 
 
 
