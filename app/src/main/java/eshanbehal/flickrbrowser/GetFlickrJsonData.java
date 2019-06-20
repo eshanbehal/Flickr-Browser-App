@@ -11,7 +11,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-class GetFlickrJsonData extends AsyncTask<String , void , List<Photo>> implements GetRawData.OnDownloadComplete {
+class GetFlickrJsonData extends AsyncTask<String , Void , List<Photo>> implements GetRawData.OnDownloadComplete {
     private static final String TAG = "GetFlickrJsonData";
 
     private List<Photo> mPhotoList = null;
@@ -20,6 +20,8 @@ class GetFlickrJsonData extends AsyncTask<String , void , List<Photo>> implement
     private boolean mMatchAll;
 
     private final OnDataAvailable mCallBack;
+
+    private boolean runningOnSameThread = false;
 
     interface OnDataAvailable {
         void onDataAvailable(List<Photo> data, DownloadStatus status);
@@ -35,6 +37,8 @@ class GetFlickrJsonData extends AsyncTask<String , void , List<Photo>> implement
 
     void executeOnSameThread(String searchCriteria) {
         Log.d(TAG, "executeOnSameThread starts");
+
+        runningOnSameThread = true;
         String destinationUri = createUri(searchCriteria, mLanguage, mMatchAll);
 
         GetRawData getRawData = new GetRawData(this);
@@ -114,7 +118,7 @@ class GetFlickrJsonData extends AsyncTask<String , void , List<Photo>> implement
             }
         }
 
-        if(mCallBack != null) {
+        if(runningOnSameThread && mCallBack != null) {
             // now inform the caller that processing is done - possibly returning null if there
             // was an error
             mCallBack.onDataAvailable(mPhotoList, status);
