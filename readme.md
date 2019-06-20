@@ -1,3 +1,5 @@
+
+
                HEYS GUYS JUST STARTED WITH CREATING A NEW APP #FLICKR BROWSER.....
 
 1.Just starting off a new project flickr browser that will allow us to search for 
@@ -51,6 +53,9 @@
 3. so here the basic concept that i have used is that calling class uses the getrawdata to download the 
    data from the url and getrawdata then does the downloading and when its finished it calls the class
    back using the callback method.
+
+4. ending today with setting up the layout interface of my app by using various widgets like cardview,
+   scrollbar view , textview , imageview etc.
 
 
 
