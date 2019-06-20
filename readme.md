@@ -40,6 +40,21 @@
 
 
 
+     20th june
+  ===============
+
+1.Starting off today by adding some info regarding my project....
+
+2. In my app i have basically used the concept of notifying the calling class that the data has been
+   downloaded and made avialabke to it.
+
+3. so here the basic concept that i have used is that calling class uses the getrawdata to download the 
+   data from the url and getrawdata then does the downloading and when its finished it calls the class
+   back using the callback method.
+
+
+
+
 
 
 
