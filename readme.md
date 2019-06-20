@@ -57,6 +57,10 @@
 4. ending today with setting up the layout interface of my app by using various widgets like cardview,
    scrollbar view , textview , imageview etc.
 
+5. forgot to add also used the concept of the nesting linear layouts with the Photo detail ativity.
+   and also added various features to the widgets by changing their attributes like layout weight etc.
+
+
 
 
 
