@@ -62,6 +62,14 @@
 
 
 
+    21st june
+  =============
+
+1. starting off today by writing the code for the recycler view adapter and creating other java aclasses
+   needed.
+
+
+
 
 
 
