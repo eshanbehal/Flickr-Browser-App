@@ -68,6 +68,8 @@
 1. starting off today by writing the code for the recycler view adapter and creating other java aclasses
    needed.
 
+2. just added code for the layout design for my app.
+
 
 
 
