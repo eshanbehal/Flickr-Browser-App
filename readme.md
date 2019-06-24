@@ -84,6 +84,11 @@
 
    links for more info: https://developer.android.com/reference/android/support/v7/widget/RecyclerView.OnItemTouchListener.html
 
+3. added the code for the gesture detectors in my app for viewing the image in app not only in a thumbnail but 
+   full image on the other screen properly by adding feature for long press and press while tapping onto the images.
+
+   for more info : https://www.littlerobots.nl/blog/Handle-Android-RecyclerView-Clicks/
+
 
 
 
