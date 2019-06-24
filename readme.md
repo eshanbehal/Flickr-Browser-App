@@ -72,6 +72,16 @@
 
 
 
+     24th june
+   =============
+
+1. just starting off today by adding code to the onbindviewholder method used in my code to download the 
+   images and show them on the call from the layout.
+
+
+
+
+
 
 
 
