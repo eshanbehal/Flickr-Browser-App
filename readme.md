@@ -89,6 +89,10 @@
 
    for more info : https://www.littlerobots.nl/blog/Handle-Android-RecyclerView-Clicks/
 
+4. added the code for the touch events under the class Recycleritemclicklistener.
+
+   more info : https://developer.android.com/reference/android/view/GestureDetector.SimpleOnGestureListener.html
+
 
 
 
