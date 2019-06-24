@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_photo_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,8 +14,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?actionBarSize"
-        android:padding="8dp">
+        android:padding="8dp"
+        >
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -31,7 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="TextView" />
+                    android:text="TextView"/>
 
                 <ImageView
                     android:id="@+id/photo_image"
@@ -39,21 +41,22 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/baseline_image_black_48dp" />
+                    app:srcCompat="@drawable/baseline_image_black_48dp"/>
 
                 <TextView
                     android:id="@+id/photo_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="TextView" />
+                    android:text="TextView"/>
 
                 <TextView
                     android:id="@+id/photo_tags"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="TextView" />
+                    android:text="TextView"/>
+
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </ScrollView>

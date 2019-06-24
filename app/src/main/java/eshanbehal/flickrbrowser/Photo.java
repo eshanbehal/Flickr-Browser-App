@@ -1,6 +1,7 @@
 package eshanbehal.flickrbrowser;
 
 class Photo {
+
     private String mTitle;
     private String mAuthor;
     private String mAuthorId;
@@ -17,27 +18,27 @@ class Photo {
         mImage = image;
     }
 
-     String getTitle() {
+    String getTitle() {
         return mTitle;
     }
 
-     String getAuthor() {
+    String getAuthor() {
         return mAuthor;
     }
 
-     String getAuthorId() {
+    String getAuthorId() {
         return mAuthorId;
     }
 
-     String getLink() {
+    String getLink() {
         return mLink;
     }
 
-     String getTags() {
+    String getTags() {
         return mTags;
     }
 
-     String getImage() {
+    String getImage() {
         return mImage;
     }
 

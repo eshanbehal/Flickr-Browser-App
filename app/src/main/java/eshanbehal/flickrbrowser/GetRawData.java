@@ -19,8 +19,8 @@ class GetRawData extends AsyncTask<String, Void, String> {
     private DownloadStatus mDownloadStatus;
     private final OnDownloadComplete mCallback;
 
-    interface OnDownloadComplete{
-        void onDownloadComplete(String data , DownloadStatus status);
+    interface OnDownloadComplete {
+        void onDownloadComplete(String data, DownloadStatus status);
     }
 
     public GetRawData(OnDownloadComplete callback) {
@@ -28,18 +28,22 @@ class GetRawData extends AsyncTask<String, Void, String> {
         mCallback = callback;
     }
 
-    void runInSameThread(String s){
-        Log.d(TAG, "runInSameThread: starts");
+    void runInSameThread(String s) {
+        Log.d(TAG, "runInSameThread starts");
+
 //        onPostExecute(doInBackground(s));
-        if (mCallback != null){
-            mCallback.onDownloadComplete(doInBackground(s) , mDownloadStatus);
+        if(mCallback != null) {
+//            String result = doInBackground(s);
+//            mCallback.onDownloadComplete(result, mDownloadStatus);
+            mCallback.onDownloadComplete(doInBackground(s), mDownloadStatus);
         }
-        Log.d(TAG, "runInSameThread: ends");
+
+        Log.d(TAG, "runInSameThread ends");
     }
 
     @Override
     protected void onPostExecute(String s) {
-       // Log.d(TAG, "onPostExecute: parameter = " + s);
+//        Log.d(TAG, "onPostExecute: parameter = " + s);
         if(mCallback != null) {
             mCallback.onDownloadComplete(s, mDownloadStatus);
         }
@@ -102,6 +106,7 @@ class GetRawData extends AsyncTask<String, Void, String> {
         mDownloadStatus = DownloadStatus.FAILED_OR_EMPTY;
         return null;
     }
+
 }
 
 
