@@ -78,6 +78,12 @@
 1. just starting off today by adding code to the onbindviewholder method used in my code to download the 
    images and show them on the call from the layout.
 
+2. got the picasso added to my app working perfectly along with the recyclerview and also used the adapters
+   along with it in order to put the data into the adapter.
+
+
+   links for more info: https://developer.android.com/reference/android/support/v7/widget/RecyclerView.OnItemTouchListener.html
+
 
 
 
