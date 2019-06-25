@@ -94,6 +94,12 @@
    more info : https://developer.android.com/reference/android/view/GestureDetector.SimpleOnGestureListener.html
 
 
+    25th june
+  =============
+
+1. starting off today by adding the code for handling the touch events in my app.
+
+
 
 
 
