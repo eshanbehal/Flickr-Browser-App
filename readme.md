@@ -99,6 +99,10 @@
 
 1. starting off today by adding the code for handling the touch events in my app.
 
+2. after the functionality of adding the touch events with the help of the concepts of the gestures now
+   adding code for displaying the full photo when one of the items in the recycler view gets clicked or 
+   tapped.
+
 
 
 
