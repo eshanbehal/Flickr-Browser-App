@@ -105,6 +105,9 @@
 
 3. just started writing code for the photo details activity in order to display the photo in the full screen.
 
+4. completed adding code for photodetailsactivity and made add working now photo can be seen by pressing on 
+   it in next page.
+
 
 
 
