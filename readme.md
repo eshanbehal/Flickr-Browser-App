@@ -103,6 +103,9 @@
    adding code for displaying the full photo when one of the items in the recycler view gets clicked or 
    tapped.
 
+3. just started writing code for the photo details activity in order to display the photo in the full screen.
+
+
 
 
 
