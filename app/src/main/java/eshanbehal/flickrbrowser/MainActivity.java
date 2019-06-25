@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity implements GetFlickrJsonData.OnDa
         super.onResume();
         GetFlickrJsonData getFlickrJsonData = new GetFlickrJsonData(this, "https://api.flickr.com/services/feeds/photos_public.gne", "en-us", true);
 //        getFlickrJsonData.executeOnSameThread("android, nougat");
-        getFlickrJsonData.execute("android");
+        getFlickrJsonData.execute("android,nougat");
         Log.d(TAG, "onResume ends");
     }
 
@@ -94,7 +94,7 @@ public class MainActivity extends BaseActivity implements GetFlickrJsonData.OnDa
         Log.d(TAG, "onItemLongClick: starts");
 //        Toast.makeText(MainActivity.this, "Long tap at position " + position, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, PhotoDetailActivity.class);
-        intent.putExtra(PHOTO_TRANSFER , mFlickrRecyclerViewAdapter.getPhoto(position));
+        intent.putExtra(PHOTO_TRANSFER, mFlickrRecyclerViewAdapter.getPhoto(position));
         startActivity(intent);
     }
 }
