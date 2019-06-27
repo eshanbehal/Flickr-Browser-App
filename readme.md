@@ -132,6 +132,8 @@
 
    for more info : https://developer.android.com/guide/topics/ui/themes.html
 
+5. ending today with some other material design changes to the stylw sheets of the app.
+
 
 
 
