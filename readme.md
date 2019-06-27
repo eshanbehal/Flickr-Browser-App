@@ -125,6 +125,9 @@
     
    for more info : https://developer.android.com/topic/libraries/support-library/index.html
 
+3. just starting off by changing the theme style and the colours for my app by using the material designs
+   principles as defined by the google.
+
 
 
 
