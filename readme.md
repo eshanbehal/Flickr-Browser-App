@@ -128,6 +128,10 @@
 3. just starting off by changing the theme style and the colours for my app by using the material designs
    principles as defined by the google.
 
+4. just made a few changes for the bakgroud color  and other changes for the themes and styles for the app.
+
+   for more info : https://developer.android.com/guide/topics/ui/themes.html
+
 
 
 
