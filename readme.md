@@ -120,6 +120,11 @@
 
                  : https://www.materialpalette.com/icons
 
+2. Another thing that i bave added to my app is the funtionality or the support for the older versions of
+   the android.ie the Backwards compatibility.
+    
+   for more info : https://developer.android.com/topic/libraries/support-library/index.html
+
 
 
 
