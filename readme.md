@@ -109,6 +109,18 @@
    it in next page.
 
 
+     27th june
+   =============
+
+1. Starting off today by using the googles most used concept in designing layouts...
+   MATERIAL DESIGN - It relates to how the applications we create look and how our users interact with our 
+                     apps.
+
+   for more info : https://material.io/design/
+
+                 : https://www.materialpalette.com/icons
+
+
 
 
 
