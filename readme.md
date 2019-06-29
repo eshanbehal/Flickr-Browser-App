@@ -140,6 +140,11 @@
 
 1. starting off today by adding v21 styles sheet to my app nd changing the colour of the navigationbar.
 
+2 just made some minor changes for handeling the string hardcoded text warnings.\
+
+3. also added search menu to app and added the code for it but not made workinhg till now will be working
+   soon.
+
 
 
 
