@@ -135,6 +135,12 @@
 5. ending today with some other material design changes to the stylw sheets of the app.
 
 
+      29th june
+   ===============
+
+1. starting off today by adding v21 styles sheet to my app nd changing the colour of the navigationbar.
+
+
 
 
 
