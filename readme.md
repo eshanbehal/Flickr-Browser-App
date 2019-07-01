@@ -153,6 +153,11 @@
 
 1. Just starting off today by adding a search view for my app so that search option can be made usefull.
 
+2. for making the code for search view configurable just took idea from the below site.
+   for more info : https://developer.android.com/reference/android/support/v7/widget/SearchView.html
+
+                 : https://developer.android.com/training/search/setup.html
+
 
 
 
