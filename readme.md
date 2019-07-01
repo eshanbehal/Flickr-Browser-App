@@ -148,6 +148,13 @@
 
 
 
+       1st july
+    =============
+
+1. Just starting off today by adding a search view for my app so that search option can be made usefull.
+
+
+
 
 
 
