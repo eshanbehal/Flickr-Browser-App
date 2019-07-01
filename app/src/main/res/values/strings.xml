@@ -6,5 +6,6 @@
     <string name="browse_image_description">Downloaded Flickr photo</string>
     <string name="photo_title_text">Title %s</string>
     <string name="photo_tags_text">Tags %s</string>
+    <string name="searchable_hint">Enter photo tags</string>
     <string name="activity_search">Search</string>
 </resources>
