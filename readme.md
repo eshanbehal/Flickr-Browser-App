@@ -170,6 +170,14 @@
    SHARED PREFERENCES - It provides a way to store app data so that we can retrieve the data again next time the
                         app starts up.
 
+3. done some minor changes for the empty search or no match found search option. and compeleted the app nd made it working.
+
+
+    
+
+
+     WILL BE MODIFYING APP IN FUTURE IF NEEDED...
+
 
 
 
