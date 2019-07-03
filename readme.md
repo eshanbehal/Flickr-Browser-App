@@ -165,6 +165,11 @@
 
 1. starting of today by impolementing the search view.
 
+2. now for storing the query text somewhere that main activity can retrieve from. So using here the conceot of
+   
+   SHARED PREFERENCES - It provides a way to store app data so that we can retrieve the data again next time the
+                        app starts up.
+
 
 
 
